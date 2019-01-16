@@ -223,12 +223,12 @@ export const startRpcRequestFunc = (isRetry, privPass) =>
       rpcpass = cfg.get("rpc_pass");
       rpccertPath = `${appData}/rpc.cert`;
       daemonhost = "127.0.0.1";
-      rpcport = "9109";
+      rpcport = cfg.get("rpc_port");
     } else {
       rpcuser = cfg.get("rpc_user");
       rpcpass = cfg.get("rpc_pass");
       daemonhost = "127.0.0.1";
-      rpcport = "9109";
+      rpcport = cfg.get("rpc_port");
     }
     var request = new RpcSyncRequest();
     const cert = getDcrdCert(rpccertPath);
